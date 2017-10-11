@@ -3,10 +3,10 @@
 <widget xmlns = "http://www.w3.org/ns/widgets" 
    xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.shapesmania.fitshapes" version = "1.00">
    
-   <name>Fit Circles</name>
+   <name>Fit Shapes</name>
    
    <description>
-      Insert maximum number of circles
+      Insert maximum number of shapes
    </description>
    
    <author href = "http://shapesmania.com/" email = "ludmiladvmnt@gmail.com@gmail.com">

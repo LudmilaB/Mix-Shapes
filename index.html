@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Shapes Mania</title> 
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+
+<meta charset="utf-8">
+<meta name="keywords" content="puzzles, puzzle games, free, online games, free games, free online games, free puzzle games">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+</head>
+<body>
+<div class="container">
+
+ <h2 class="title_sm"><span class="red">F</span><span class="green">i</span><span class="orange">t<span class="blue"> S</span><span class="red">h</span><span class="green">a</span><span class="orange">p<span class="blue">e</span><span class="red">s</span></h2>
+ <h3>Fit as many shapes as you can</h3>
+
+<table class="heading">
+  <tbody>
+     <tr>
+      <td><button id="restart-button" onclick="StartGame()" type ="button">New Game</button></td>	  
+	  <td id="score_td">
+        <div id="score-container">0</div>
+        <div id="best-container">0</div>
+      </td>      
+    </tr>
+</tbody>
+</table>
+<div id="canvasContainer"><canvas id="myCanvas" width="500" height="500" onclick="StartShape(event)"></canvas>
+ <div class="game-message">
+        <div><p></p></div>
+        <div class="lower">
+	        <button id ="keep-playing-button" onClick="ContinueGame()" >Continue</button>
+            <button id ="retry-button" onclick="StartGame()">Try again</button>
+			
+      </div>
+</div>
+<p class="game-explanation"><b>HOW TO PLAY:</b> Touch empty space to grow a new shape. When a new shape touches an existing shape of same color, they both disappear. If they have different colors, both stay. If the new shape cannot fit, a minimal dotted outline is shown. After 3 such misfits in a row, the game is over. If you touch inside a standalone shape, it will grow more.</p>
+<div id="bottom">© Shapes Mania</div>
+</div>
+</div>
+
+<script src="cordova.js"></script>
+<script src="js/ShapesGames.js"></script>
+<script src="js/rectangles.js"></script>
+<script src="js/circles.js"></script>
+<script src="js/mixshapes.js"></script>
+ </body>
+</html>

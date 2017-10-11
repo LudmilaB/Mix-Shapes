@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets" 
+   xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.shapesmania.fitshapes" version = "1.00">
+   
+   <name>Fit Circles</name>
+   
+   <description>
+      Insert maximum number of circles
+   </description>
+   
+   <author href = "http://shapesmania.com/" email = "ludmiladvmnt@gmail.com@gmail.com">
+      Shapes Mania
+   </author>
+   
+   <preference name = "permissions" value = "none"/>
+   
+   <icon src = "res/android/icon_ldpi.png" 
+      gap:platform = "android" gap:qualifier = "ldpi" />
+		
+   <icon src = "res/android/icon_mdpi.png" 
+      gap:platform = "android" gap:qualifier = "mdpi" />
+		
+   <icon src = "res/android/icon_hdpi.png" 
+      gap:platform = "android" gap:qualifier = "hdpi" />
+		
+   <icon src = "res/android/icon_xhdpi.png" 
+      gap:platform = "android" gap:qualifier = "xhdpi" />
+		
+   <icon src = "res/icon/android/icon_xxhdpi.png" 
+      gap:platform = "android" gap:qualifier = "xxhdpi" />
+   
+</widget>

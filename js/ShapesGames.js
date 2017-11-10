@@ -9,7 +9,12 @@
 	  var Start=true;
 	  var level=1; 
       var scoreLevels=[100,400, 1000, 2000, 3000];
-	  var interv;	 
+	  var interv;
+
+	  var swooshSound = new sound("sounds/menu-button-click-switch-01.mp3");
+	  var mistakeSound = new sound("sounds/notification-alert-95.mp3");
+	  var endOfGameSound = new sound("sounds/correct-answer-bell-gliss-01.mp3");
+	  var newLevelSound = new sound("sounds/correct-answer-bell-gliss-04.mp3");	  
 	  
 	  function shape(ct_x, ct_y,type){
 		this.type=type;
@@ -80,10 +85,27 @@
 	}
 	
 	function RemoveMessage()
-	{
-		
+	{		
 	  messageContainer = document.querySelector(".game-message");
 	  messageContainer.classList.remove("game-over");
-      messageContainer.classList.remove("game-continue");  
-		
+      messageContainer.classList.remove("game-continue");  		
 	}
+	
+ function sound(src) 
+ {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function()
+	{
+		this.sound.pause();
+        this.sound.currentTime = 0;
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+ }

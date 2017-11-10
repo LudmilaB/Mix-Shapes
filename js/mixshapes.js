@@ -47,6 +47,7 @@
 					    else
 						  shapes.splice(j,1);
 						redraw();
+						swooshSound.play();
 						return;
 					 }
 					 else
@@ -75,6 +76,9 @@
 	  function StartShape(event){
 	   if(!Start)
 	      return;
+	   swooshSound.play(); //without that doesn't work on mobile
+	   swooshSound.stop();//
+	   
 	   var rect = canvas.getBoundingClientRect();
        var x=(event.clientX-rect.left)/(rect.right-rect.left)*canvas.width;
        var y= (event.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height;
@@ -93,10 +97,13 @@
 	   {
 		    DrawMistake(s);
 			mistakes++;
+			if(mistakes<3)
+			     mistakeSound.play();
 			if (mistakes==3)
 			{
 			   Start=false;
 			   clearInterval(interv);
+			   endOfGameSound.play();
 			   messageContainer = document.querySelector(".game-message");
 			   messageContainer.classList.add("game-over");
 			   messageContainer.getElementsByTagName("p")[0].textContent ="Game over!";
@@ -120,6 +127,7 @@
 		 window.localStorage.setItem("best-shapes", best)
 		}
 		if (newlevel>level){
+			newLevelSound.play();
 			level=newlevel;
 			messageContainer = document.querySelector(".game-message");
             messageContainer.classList.add("game-continue");

@@ -91,21 +91,50 @@
       messageContainer.classList.remove("game-continue");  		
 	}
 	
- function sound(src) 
- {
+ function ActivateSounds()
+{
+	swooshSound.play(); //without that doesn't work on mobile
+	swooshSound.stop();
+	mistakeSound.play();
+	mistakeSound.stop();
+	newLevelSound.play();
+	newLevelSound.stop();
+	endOfGameSound.play();
+	endOfGameSound.stop();
+
+}	 
+	
+var PlaySounds=false;
+
+function ToggleSound()
+{
+	PlaySounds=!PlaySounds;
+	if(PlaySounds)
+	{
+		ActivateSounds();
+		document.getElementById("sound-button").src="res/sound_mute.png";
+	}
+	else
+		document.getElementById("sound-button").src="res/sound.png";
+}
+	
+function sound(src)
+{
     this.sound = document.createElement("audio");
     this.sound.src = src;
     this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
-    this.play = function()
-	{
-		this.sound.pause();
-        this.sound.currentTime = 0;
-        this.sound.play();
+    this.play = function(){
+		if(PlaySounds)
+		{
+		  this.sound.pause();
+          this.sound.currentTime = 0;
+          this.sound.play();
+		}
     }
     this.stop = function(){
         this.sound.pause();
     }
- }
+}

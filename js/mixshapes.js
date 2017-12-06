@@ -1,5 +1,8 @@
 
 	  var best=localStorage.getItem("best-shapes");
+	  if(!best)
+		  best=0;
+
 	  document.getElementById('best-container').innerHTML=best;
 
 	 function StartGame(){

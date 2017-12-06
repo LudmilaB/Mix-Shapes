@@ -44,7 +44,7 @@ html, body {
   display: block;
   text-align: center;
   font-size:36px;
-   color: MediumBlue;
+ 
    }
    
    h2.title_sm{margin:0;}
@@ -58,6 +58,7 @@ html, body {
 .pink{color:DeepPink ;}
 
 #score_td{text-align: right;} 
+#sound_td{text-align: center;} 
 
 #score-container, #best-container {
   position: relative;
@@ -91,7 +92,7 @@ html, body {
   content: "Best"; }
   
   .container {
-  max-width: 500px;
+  max-width: 450px;
   margin: 0 auto; }
   
   .main_container {
@@ -166,7 +167,6 @@ hr {
 #bottom{
     color: #24328c;
     text-align:center;
-	margin: 50px auto auto;
 }
 
 a{
@@ -200,13 +200,15 @@ margin-left: 10px;
 }  
 }
 
-@media screen and (max-height: 768px) and (min-width: 481px) {
+@media screen and (max-height: 723px) and (min-width: 481px) {
 	
 .container{
   max-width: 400px;
-}  
+} 
+.game-explanation {
+  margin-top: 5px; } 
 }
-@media(max-width: 520px) {
+@media screen and (max-width: 520px),screen and  (max-height: 671px) {
 
 .container{
 max-width:360px;
@@ -238,8 +240,9 @@ body {
     }
 	
 #score_td{width: 50%;} 
-}
 
+#sound-button{ width:55%;}
+}
 
   @media (max-width: 380px) {
 
@@ -264,10 +267,26 @@ margin-right:10px;
 
 
   #restart-button ,#retry-button ,#keep-playing-button{
-    padding: 0;
-    margin-top: 2px; 
-}
-	
+        padding: 2px;
+    font-size:15px;	
+	height: 100%;
+    min-height: 30px;
 
-	} 
+}
+#score-container, #best-container {
+    font-size: 14px;
+    height: 14px;
+    padding: 11px 15px;
+    line-height: 30px;
+    }
+#score-container:after, #best-container:after {
+    font-size: 11px;
+    top: 5px;
+}
+
+.game-explanation {
+  margin-top: 2px; } 
+}	
+
+} 
 	

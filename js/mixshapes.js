@@ -18,7 +18,8 @@
 	  level=1;
 	  document.getElementById('best-container').innerHTML=best;
 	  document.getElementById('score-container').innerHTML=0;
-	  Start=true;	
+	  Start=true;
+	  FirstShape=true;
 	  context.clearRect(0, 0, canvas.width, canvas.height);		
 	}
 
@@ -79,8 +80,11 @@
 	  function StartShape(event){
 	   if(!Start)
 	      return;
-	   swooshSound.play(); //without that doesn't work on mobile
-	   swooshSound.stop();//
+	  if(FirstShape)
+	  {
+		  FirstShape=false;
+		  ActivateSounds();
+	  }
 	   
 	   var rect = canvas.getBoundingClientRect();
        var x=(event.clientX-rect.left)/(rect.right-rect.left)*canvas.width;

@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 
 <widget xmlns = "http://www.w3.org/ns/widgets" 
-   xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.shapesmania.fitshapes" version = "1.03">
+   xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.shapesmania.fitshapes" version = "1.04">
    
    <name>Fit Shapes</name>
    
@@ -12,6 +12,11 @@
    <author href = "http://shapesmania.com/" email = "ludmiladvmnt@gmail.com@gmail.com">
       Shapes Mania
    </author>
+   
+   <platform name="android">
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-targetSdkVersion" value="26" />
+   </platform>
    
    <preference name = "permissions" value = "none"/>
    

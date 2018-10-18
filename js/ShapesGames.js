@@ -7,6 +7,7 @@
 	  var canvas = document.getElementById('myCanvas');
 	  var context = canvas.getContext('2d');
 	  var Start=true;
+	  var FirstShape=true; //for sounds
 	  var level=1; 
       var scoreLevels=[100,400, 1000, 2000, 3000];
 	  var interv;
@@ -104,7 +105,7 @@
 
 }	 
 	
-var PlaySounds=false;
+var PlaySounds=true;
 
 function ToggleSound()
 {
